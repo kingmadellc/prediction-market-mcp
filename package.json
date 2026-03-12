@@ -1,7 +1,7 @@
 {
   "name": "@kingmadellc/prediction-market-mcp",
   "version": "1.0.0",
-  "description": "MCP server for Prediction Market Analyst — calibrated probability estimation, Kelly sizing, market scanning, and sports models. Pays per-call via x402 micropayments (USDC on Base).",
+  "description": "MCP server for Prediction Market Analyst — probability estimation, Kelly sizing, signal detection, and full ensemble analysis for prediction markets. Pays per-call via x402 micropayments (USDC on Base).",
   "type": "module",
   "main": "dist/index.js",
   "bin": {
@@ -18,9 +18,12 @@
   ],
   "keywords": [
     "mcp",
-    "prediction-market",
+    "prediction-markets",
+    "kalshi",
+    "polymarket",
     "probability",
     "kelly-criterion",
+    "trading",
     "x402",
     "ai-tools",
     "claude",
