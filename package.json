@@ -1,0 +1,50 @@
+{
+  "name": "@kingmadellc/prediction-market-mcp",
+  "version": "1.0.0",
+  "description": "MCP server for Prediction Market Analyst — calibrated probability estimation, Kelly sizing, market scanning, and sports models. Pays per-call via x402 micropayments (USDC on Base).",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "prediction-market-mcp": "dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "tsx src/index.ts"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "keywords": [
+    "mcp",
+    "prediction-market",
+    "probability",
+    "kelly-criterion",
+    "x402",
+    "ai-tools",
+    "claude",
+    "cursor",
+    "windsurf",
+    "model-context-protocol"
+  ],
+  "author": "KingMade LLC",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kingmadellc/prediction-market-mcp"
+  },
+  "homepage": "https://prediction-market-analyst.vercel.app",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.12.0",
+    "zod": "^3.25.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.0",
+    "@types/node": "^20.0.0",
+    "tsx": "^4.7.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
