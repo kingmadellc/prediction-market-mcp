@@ -1,6 +1,6 @@
 {
   "name": "@kingmadellc/prediction-market-mcp",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "MCP server for Prediction Market Analyst — probability estimation, Kelly sizing, signal detection, and full ensemble analysis for prediction markets. Pays per-call via x402 micropayments (USDC on Base).",
   "type": "module",
   "main": "dist/index.js",
