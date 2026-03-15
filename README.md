@@ -26,9 +26,10 @@ claude mcp add prediction-market -- npx @kingmadellc/prediction-market-mcp
 
 ## Performance
 
-- **Kalshalyst trading score**: 0.891 on 100+ resolved markets
-- **Xpulse composite score**: 0.9146
-- **Edge accuracy**: 90.2%
+- **Kalshalyst trading score**: 0.704 on 39 resolved Kalshi markets
+- **Xpulse composite score**: optimized via autoresearch (no verified ground truth number)
+- **Edge accuracy**: 61.4%
+- **Brier score**: 0.161
 - **Kelly 2.6x P&L lift** vs defaults
 
 ## Wallet

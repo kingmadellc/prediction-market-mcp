@@ -16,7 +16,7 @@ const TOOLS = [
   {
     name: "prediction_market_estimate",
     description:
-      "Calibrated probability estimate for a prediction market question. Uses the Kalshalyst methodology — a proprietary estimator tuned on 100+ resolved markets with 0.891 trading score and 90.2% edge accuracy. Returns probability estimate, confidence, reasoning, and recommended trade direction. Costs $0.05 via x402 micropayment (USDC on Base).",
+      "Calibrated probability estimate for a prediction market question. Uses the Kalshalyst methodology — an open-source estimator backtested on 39 resolved Kalshi markets with 0.704 trading score, 0.161 Brier score, and 61.4% edge accuracy. Returns probability estimate, confidence, reasoning, and recommended trade direction. Costs $0.05 via x402 micropayment (USDC on Base).",
     inputSchema: {
       type: "object" as const,
       properties: {
@@ -57,7 +57,7 @@ const TOOLS = [
   {
     name: "prediction_market_size",
     description:
-      "Kelly-optimal position sizing for a prediction market trade. Uses premium Kelly parameters (α=0.75, conf_exp=1.0) that produce 2.6x P&L lift over free defaults. Applies market filter rules (skip fed/ultra-low/short-duration, boost policy/tech/markets). Costs $0.08 via x402 micropayment (USDC on Base).",
+      "Kelly-optimal position sizing for a prediction market trade. Uses optimized Kelly parameters (α=0.75, conf_exp=1.0) that produce 2.6x P&L lift over defaults. Applies market filter rules (skip fed/ultra-low/short-duration, boost policy/tech/markets). Costs $0.08 via x402 micropayment (USDC on Base).",
     inputSchema: {
       type: "object" as const,
       properties: {
@@ -102,7 +102,7 @@ const TOOLS = [
   {
     name: "prediction_market_scan",
     description:
-      "Scan and rank multiple prediction markets by tradeable edge. Applies proprietary market filter (skip rules remove low-quality markets, boost rules amplify high-edge categories). Returns ranked opportunities with Kelly sizing and filter status. Costs $0.10 via x402 micropayment (USDC on Base).",
+      "Scan and rank multiple prediction markets by tradeable edge. Applies the market filter (skip rules remove low-quality markets, boost rules amplify high-edge categories). Returns ranked opportunities with Kelly sizing and filter status. Costs $0.10 via x402 micropayment (USDC on Base).",
     inputSchema: {
       type: "object" as const,
       properties: {
@@ -139,7 +139,7 @@ const TOOLS = [
   {
     name: "prediction_market_ensemble",
     description:
-      "Full prediction market analysis pipeline — Kalshalyst probability estimation + Xpulse social signal detection + ensemble weighting (0.75/0.25 Kalshalyst/Xpulse) + Kelly position sizing + market filter. The complete stack that produces 0.893 trading score. Costs $0.15 via x402 micropayment (USDC on Base).",
+      "Full prediction market analysis pipeline — Kalshalyst probability estimation + Xpulse social signal detection + ensemble weighting (0.75/0.25 Kalshalyst/Xpulse) + Kelly position sizing + market filter. Includes the complete prediction workflow with verified Kalshalyst backtest metrics and autoresearch-optimized signal detection. Costs $0.15 via x402 micropayment (USDC on Base).",
     inputSchema: {
       type: "object" as const,
       properties: {
