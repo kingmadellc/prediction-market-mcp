@@ -1,47 +1,29 @@
-# prediction-market-mcp
+# Prediction Market MCP — legacy experimental client
 
-MCP server for prediction market analysis. Probability estimation, Kelly sizing, signal detection, market filtering. Pays per-call via x402 (USDC on Base).
+Source and support destination for `@kingmadellc/prediction-market-mcp@1.0.1`, previously published on npm. This repository is in maintenance mode. It is an MCP wrapper around a separate hosted API; it does not contain that service, a wallet, or an automatic payment signer.
 
-## Install
-
-```bash
-npm install -g @kingmadellc/prediction-market-mcp
+```sh
+npm install -g @kingmadellc/prediction-market-mcp@1.0.1
 ```
 
-## Add to Claude Code
-
-```bash
-claude mcp add prediction-market -- npx @kingmadellc/prediction-market-mcp
+```sh
+claude mcp add prediction-market -- npx @kingmadellc/prediction-market-mcp@1.0.1
 ```
 
-## Tools
+The client exposes estimation, sizing, scanning, ensemble, and service-information tools. Calls to paid endpoints return payment-required information when the service responds with HTTP 402. The client does not make the payment or retry with a signed payment. Check the service response for current requirements; do not rely on old hard-coded pricing as an offer.
 
-| Tool | What it does | Price |
-|------|--------------|-------|
-| `prediction_market_estimate` | Kalshalyst probability estimate | $0.05 |
-| `prediction_market_size` | Kelly-optimal position sizing (2.6x P&L lift) | $0.08 |
-| `prediction_market_scan` | Rank markets by tradeable edge | $0.10 |
-| `prediction_market_ensemble` | Full stack: estimate + Xpulse + ensemble + Kelly | $0.15 |
-| `prediction_market_info` | Service info, endpoints, pricing | Free |
+## Support boundary
 
-## Performance
+The published npm version is historical and is not automatically updated by source commits here. Service availability, paid execution, and previously advertised performance figures have not been validated end to end. Treat outputs as experimental research. No live financial transaction is part of repository verification.
 
-- **Kalshalyst trading score**: 0.704 on 39 resolved Kalshi markets
-- **Xpulse composite score**: optimized via autoresearch (no verified ground truth number)
-- **Edge accuracy**: 61.4%
-- **Brier score**: 0.161
-- **Kelly 2.6x P&L lift** vs defaults
+Report reproducible client bugs through this repository's Issues tab. Do not post credentials, wallet keys, account exports, or personal contact information. No response-time commitment is offered for this legacy client.
 
-## Wallet
+## Development
 
-All payments: `0xEbFc61b8b5D2BFaD8938B80cC131d3fA7C6fdd24` (Base network, USDC)
+```sh
+npm ci
+npm run build
+npm pack --dry-run
+```
 
-## API
-
-https://prediction-market-analyst.vercel.app
-
-## License
-
-MIT
-
-Powered by [prediction-market-analyst.vercel.app](https://prediction-market-analyst.vercel.app)
+CI builds the client and inspects the package without calling the service or publishing to npm. License: MIT; see LICENSE.

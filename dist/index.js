@@ -8,7 +8,7 @@ const API_BASE = "https://prediction-market-analyst.vercel.app";
 const TOOLS = [
     {
         name: "prediction_market_estimate",
-        description: "Calibrated probability estimate for a prediction market question. Uses the Kalshalyst methodology — an open-source estimator backtested on 39 resolved Kalshi markets with 0.704 trading score, 0.161 Brier score, and 61.4% edge accuracy. Returns probability estimate, confidence, reasoning, and recommended trade direction. Costs $0.05 via x402 micropayment (USDC on Base).",
+        description: "Experimental probability estimate for a prediction market question. Historical performance claims have not been independently reproduced for this client. Returns probability estimate, confidence, reasoning, and recommended trade direction. Costs $0.05 via x402 micropayment (USDC on Base).",
         inputSchema: {
             type: "object",
             properties: {
@@ -45,7 +45,7 @@ const TOOLS = [
     },
     {
         name: "prediction_market_size",
-        description: "Kelly-optimal position sizing for a prediction market trade. Uses optimized Kelly parameters (α=0.75, conf_exp=1.0) that produce 2.6x P&L lift over defaults. Applies market filter rules (skip fed/ultra-low/short-duration, boost policy/tech/markets). Costs $0.08 via x402 micropayment (USDC on Base).",
+        description: "Kelly-optimal position sizing for a prediction market trade. Uses configured Kelly parameters (α=0.75, conf_exp=1.0); no performance improvement is guaranteed. Applies market filter rules (skip fed/ultra-low/short-duration, boost policy/tech/markets). Costs $0.08 via x402 micropayment (USDC on Base).",
         inputSchema: {
             type: "object",
             properties: {
@@ -122,7 +122,7 @@ const TOOLS = [
     },
     {
         name: "prediction_market_ensemble",
-        description: "Full prediction market analysis pipeline — Kalshalyst probability estimation + Xpulse social signal detection + ensemble weighting (0.75/0.25 Kalshalyst/Xpulse) + Kelly position sizing + market filter. Includes the complete prediction workflow with verified Kalshalyst backtest metrics and autoresearch-optimized signal detection. Costs $0.15 via x402 micropayment (USDC on Base).",
+        description: "Full prediction market analysis pipeline — Kalshalyst probability estimation + Xpulse social signal detection + ensemble weighting (0.75/0.25 Kalshalyst/Xpulse) + Kelly position sizing + market filter. Includes the complete prediction workflow with experimental estimation and signal detection. Costs $0.15 via x402 micropayment (USDC on Base).",
         inputSchema: {
             type: "object",
             properties: {
@@ -203,7 +203,6 @@ async function callAPI(path, method, params) {
                 payment_protocol: "x402",
                 network: "Base (EVM)",
                 currency: "USDC",
-                wallet: "0xEbFc61b8b5D2BFaD8938B80cC131d3fA7C6fdd24",
                 how_to_pay: "Send a request with an x402 payment header. See https://x402.org for protocol details.",
                 service_manifest: `${API_BASE}/`,
                 payment_header_hint: paymentHeader
